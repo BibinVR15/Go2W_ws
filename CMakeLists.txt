@@ -33,3 +33,6 @@ target_link_libraries(answer unitree_sdk2)
 
 add_executable(sad sad.cpp)
 target_link_libraries(sad unitree_sdk2)
+
+add_executable(my_name myname.cpp)
+target_link_libraries(my_name unitree_sdk2)
