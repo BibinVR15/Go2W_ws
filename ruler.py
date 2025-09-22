@@ -21,6 +21,7 @@ BACK_EXE_PATH = "/home/verse/unitree_sdk2/build/bin/back"
 TALK_EXE_PATH = "/home/verse/unitree_sdk2/build/bin/talk"
 ANSWER_EXE_PATH = "/home/verse/unitree_sdk2/build/bin/answer"
 SAD_EXE_PATH = "/home/verse/unitree_sdk2/build/bin/sad"
+NAME_EXE_PATH = "/home/verse/unitree_sdk2/build/bin/my_name"
 COMMANDS_EXE_PATH = "/home/verse/unitree_sdk2/build/bin/commands"
 NETWORK_INTERFACE = "eth0"
 
@@ -94,6 +95,7 @@ def run_robot_action(keyword: str):
         "talk": f"{TALK_EXE_PATH} {NETWORK_INTERFACE}",
         "answer": f"{ANSWER_EXE_PATH} {NETWORK_INTERFACE}",
         "sad": f"{SAD_EXE_PATH} {NETWORK_INTERFACE}",
+        "my name": f"{NAME_EXE_PATH} {NETWORK_INTERFACE}",
     }
 
     if keyword in actions:
@@ -111,7 +113,7 @@ def interpret_with_gemini(text: str) -> str:
     prompt = f"""
     You are controlling a robot. 
     Based on the input text: "{text}", reply with ONLY one keyword from this list:
-    [pose, sing, left, right, move, back, talk, answer, sad].
+    [pose, sing, left, right, move, back, talk, answer, sad, my name].
     If it doesn't match, just return "none".
     """
     try:
